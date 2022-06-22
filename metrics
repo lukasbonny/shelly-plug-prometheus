@@ -43,10 +43,6 @@ $results = json_decode($result);
 # TYPE power gauge
 power <?php print $results->pwr; ?>
 
-# HELP is_valid Whether power metering self-checks OK
-# TYPE is_valid gauge
-# is_valid <?php print $results->is_valid; ?>
-
-# HELP total Total energy consumed by the attached electrical appliance in Watt-minute
-# TYPE total gauge
-# total <?php print $results->total; ?>
+# HELP level Erkennungslevel (Genauigkeit)
+# TYPE level gauge
+level <?php print $results->lvl; ?>
