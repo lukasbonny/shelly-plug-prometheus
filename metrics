@@ -9,7 +9,7 @@ $hostname = getenv('SHELLY_HOSTNAME');
 $username = getenv('SHELLY_HTTP_USERNAME');
 $password = getenv('SHELLY_HTTP_PASSWORD');
 
-$url = 'http://' . $hostname . '/meter/0';
+$url = 'http://' . $hostname . '/a?f=j';
 
 $curl = curl_init();
 
@@ -41,12 +41,12 @@ $results = json_decode($result);
 ?>
 # HELP power Current real AC power being drawn, in Watts
 # TYPE power gauge
-power <?php print $results->power; ?>
+power <?php print $results->pwr; ?>
 
 # HELP is_valid Whether power metering self-checks OK
 # TYPE is_valid gauge
-is_valid <?php print $results->is_valid; ?>
+# is_valid <?php print $results->is_valid; ?>
 
 # HELP total Total energy consumed by the attached electrical appliance in Watt-minute
 # TYPE total gauge
-total <?php print $results->total; ?>
+# total <?php print $results->total; ?>
